@@ -41,21 +41,22 @@ The Bank Management System provides functionalities for managing customer inform
 
 ## Project Architecture
 
-├── controller
-│ └── Handles API requests and responses
-│
-├── service
-│ └── Contains business logic
-│
-├── repository
-│ └── Handles database operations
-│
-├── entity
-│ └── Defines database entities
-│
-└── exception
-└── Manages application exceptions
+The application follows a layered architecture to maintain separation of concerns and improve code maintainability.
 
+### Controller Layer
+Handles incoming HTTP requests and provides REST API endpoints. It communicates with the service layer and returns appropriate responses to the client.
+
+### Service Layer
+Contains the core business logic of the application. It processes customer operations, transaction handling, and coordinates communication between the controller and repository layers.
+
+### Repository Layer
+Responsible for database operations using Spring Data JPA. It provides methods to perform CRUD operations and interact with the MySQL database.
+
+### Entity Layer
+Defines the database entities and represents the structure of tables stored in MySQL. These classes are mapped using JPA annotations.
+
+### Exception Handling Layer
+Manages application-specific errors using custom exceptions and global exception handling to provide meaningful error responses.
 
 ## Database Configuration
 
